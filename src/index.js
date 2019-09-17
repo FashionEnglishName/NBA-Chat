@@ -20,20 +20,18 @@ const store = createStore(reducer, composeEnhancers(
     applyMiddleware(thunk)
 ));
 
-function Boss () {
-    return <h2>Boss</h2>;
-}
-
 ReactDom.render(
     (<Provider store={store}>
         <BrowserRouter>
             <div>
                 <AuthRoute></AuthRoute>
                 <Switch>
+                    
                     <Route path="/userInfo" component={UserInfo}></Route>
                     <Route path="/login" component={Login}></Route>
                     <Route path="/register" component={Register}></Route>
                     <Route path="/chat/:userId" component={Chat}></Route>
+
                     <Route component={Dashboard}></Route>
                 </Switch>
             </div>

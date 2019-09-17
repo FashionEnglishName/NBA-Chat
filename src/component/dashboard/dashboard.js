@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {NavBar} from "antd-mobile";
-import {Switch, Route } from 'react-router-dom';
+import {Switch, Route, Redirect } from 'react-router-dom';
 import NavLinkBar from "../../component/navLink/navLink";
 import Warriors from "../warriors/warriors";
 import Raptors from "../raptors/raptors";
@@ -19,8 +19,12 @@ class Dashboard extends React.Component {
 
     render () {
         const user = this.props.user;
+        console.log("user",user)
         const {pathname} = this.props.location;
-        console.log(user);
+        if(!user.user) return (
+            <Redirect to='/login' />
+        )
+
         const navList = [
             {
                 path: '/warriors',

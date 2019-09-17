@@ -21,7 +21,6 @@ class Message extends React.Component {
         const Brief = Item.Brief;
         return (
             <div>
-                <h2>Message</h2>
 
                 {chatList.map(chat => {
                     const length = chat.length - 1;

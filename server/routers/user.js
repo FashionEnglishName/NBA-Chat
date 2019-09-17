@@ -9,6 +9,7 @@ const _filter = { 'pwd': 0, '__v': 0 };
 
 Router.get("/user/info", function(req, res) {
     const {userId} = req.cookies;
+    console.log(req.cookies)
     if(!userId) return res.json({code: 1});
     User.findById(userId, _filter, function(err, user) {
         if(err) return res.json({code: 1, msg: "backend error"});

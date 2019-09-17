@@ -8,7 +8,6 @@ class AuthRoute extends React.Component {
     componentDidMount() {
         const publicList = ['register', 'login'];
         const pathname = this.props.location.pathname;
-
         if(publicList.indexOf(pathname) > -1) {
             return null;
         }
